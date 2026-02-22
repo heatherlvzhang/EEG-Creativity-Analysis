@@ -1,21 +1,26 @@
-# EEG-Creativity-Analysis
+# EEG-AI-Creativity-Analysis
 
-This repository contains the analysis code and results for a study exploring **human creativity and AI attention patterns** during divergent and evaluative creative tasks. The project includes EEG data analysis and Python-based AI attention analysis.
+This repository contains analysis code and visualizations for a study examining the relationship between **human neural activity (EEG)** and **AI attention dynamics** across different stages of creative cognition.
+
+The project integrates:
+
+- EEG alpha and beta power analysis
+- Frontal vs. parietal regional comparisons
+- Transformer-based AI attention visualization
+- Quantitative statistical testing
+- Cross-domain EEG–AI correlation analysis
 
 ---
 
-## Project Overview
+## Creative Task Conditions
 
-The study investigates three phases of creativity:
+The study investigates three cognitive phases of creativity:
 
-1. **IDG** – Idea Generation  
-2. **IDE** – Idea Evolution  
-3. **IDR** – Idea Evaluation  
+- **IDG** – Idea Generation  
+- **IDE** – Idea Evolution  
+- **IDR** – Idea Evaluation  
 
-We analyzed:
-
-- **EEG recordings** to measure alpha and beta power across tasks, including regional analyses (frontal vs parietal).  
-- **AI attention patterns** using GPT-2 to simulate creative interpretation and critique.
+These phases are analyzed in both human EEG data and AI attention responses.
 
 ---
 
@@ -23,92 +28,124 @@ We analyzed:
 
 
 EEG-Creativity-Analysis/
-├─ MATLAB/
-│ ├─ eeg_beta_analysis.m # EEG alpha/beta power computation and statistical analysis
-│ └─ Frontal_Parietal_Analysis.m # Regional analysis (frontal vs parietal) of EEG data
-├─ Python/
-│ ├─ Visual_AI_Attention_Analysis.py # Generates attention maps and difference maps for AI tasks
-│ └─ Quantitative_AI_Attention_Analysis.py # Performs statistical analysis on AI attention matrices
-├─ Figures/
-│ ├─ Mean_alpha_power.png
-│ ├─ Mean_beta_power.png
-│ ├─ IDG.png
-│ ├─ IDE.png
-│ ├─ IDR.png
-│ ├─ Difference-IDE-IDG.png
-│ ├─ Difference-IDR-IDE.png
-│ └─ Difference-IDR-IDG.png
-└─ README.md
+├── MATLAB/
+│ ├── EEG_Beta_Analysis.m
+│ └── Frontal_Parietal_Analysis.m
+├── Python/
+│ ├── Visual_AI_Attention_Analysis.py
+│ └── Quantitative_AI_Attention_Analysis.py
+├── Figures/
+│ ├── AI-IDG.png
+│ ├── AI-IDE.png
+│ ├── AI-IDR.png
+│ ├── Difference-IDE-IDG.png
+│ ├── Difference-IDR-IDE.png
+│ ├── Difference-IDR-IDG.png
+│ ├── Mean_alpha_power.png
+│ ├── Mean_beta_power.png
+│ └── EEG-AI-Correlation.png
+└── README.md
 
 
 ---
 
-## MATLAB Analysis (EEG)
+# MATLAB Analysis (Human EEG)
 
-**Scripts:**
+### 1. `EEG_Beta_Analysis.m`
 
-- `eeg_beta_analysis.m`  
-  - Computes alpha (8–12 Hz) and beta (13–30 Hz) power for each subject across tasks.  
-  - Calculates mean, standard deviation, and standard error for each task.  
-  - Performs repeated-measures ANOVA and pairwise t-tests to evaluate task differences.  
-  - Visualizes results with bar plots and error bars.  
+This script:
 
-- `Frontal_Parietal_Analysis.m`  
-  - Compares frontal and parietal beta power across tasks.  
-  - Generates regional bar plots to highlight task-specific cortical engagement.  
+- Computes **alpha (8–12 Hz)** and **beta (13–30 Hz)** power across tasks
+- Calculates mean and variability measures
+- Performs repeated-measures statistical testing
+- Generates power comparison plots
 
-**Figures:**
+### Generated Figures
 
-- `Mean_alpha_power.png` – Mean alpha power across IDG, IDE, IDR tasks.  
-- `Mean_beta_power.png` – Mean beta power across IDG, IDE, IDR tasks.
+- **Mean_alpha_power.png**  
+  Mean alpha power across IDG, IDE, and IDR.
 
----
-
-## Python Analysis (AI Attention)
-
-**Scripts:**
-
-- `Visual_AI_Attention_Analysis.py`  
-  - Generates attention maps for each AI task (IDG, IDE, IDR).  
-  - Produces difference maps highlighting attention shifts between tasks.  
-
-- `Quantitative_AI_Attention_Analysis.py`  
-  - Performs Kruskal-Wallis non-parametric ANOVA on attention matrices.  
-  - Conducts post-hoc Dunn’s test to identify significant pairwise differences.  
-
-**Figures:**
-
-- `IDG.png, IDE.png, IDR.png` – Individual attention maps for each creative phase.  
-- `Difference-IDE-IDG.png, Difference-IDR-IDE.png, Difference-IDR-IDG.png` – Difference maps highlighting AI attention changes between tasks.
+- **Mean_beta_power.png**  
+  Mean beta power across IDG, IDE, and IDR.
 
 ---
 
-## How to Use
+### 2. `Frontal_Parietal_Analysis.m`
 
-1. **EEG Analysis (MATLAB)**  
-   - Place EEG `.mat` files for each subject in the MATLAB working directory.  
-   - Run `eeg_beta_analysis.m` and/or `Frontal_Parietal_Analysis.m` to reproduce analysis and plots.  
+This script:
 
-2. **AI Attention Analysis (Python)**  
-   - Install Python 3.x and required libraries:  
-     ```bash
-     pip install transformers torch numpy matplotlib scikit_posthocs
-     ```  
-   - Run `Visual_AI_Attention_Analysis.py` to generate attention maps.  
-   - Run `Quantitative_AI_Attention_Analysis.py` to perform statistical analyses on AI attention matrices.
+- Separates electrodes into frontal and parietal regions
+- Compares beta power across cortical regions
+- Identifies task-specific regional activation patterns
 
 ---
 
-## Notes
+# Python Analysis (AI Attention)
 
-- EEG raw data is **not included** to protect participant privacy.  
-- Figures are provided to illustrate results.  
-- Repository structure separates MATLAB (EEG) and Python (AI) analyses for clarity.
+The AI analysis uses transformer attention matrices to examine how a language model distributes attention during creative task prompts.
 
 ---
 
-## References
+### 1. `Visual_AI_Attention_Analysis.py`
 
-- GPT-2: Radford et al., 2019, OpenAI  
-- MATLAB bandpower and EEG analysis documentation  
-- Torrance Test of Creative Thinking (TTCT) paradigms
+This script:
+
+- Generates attention heatmaps for:
+  - **AI-IDG.png**
+  - **AI-IDE.png**
+  - **AI-IDR.png**
+- Computes attention difference maps:
+  - **Difference-IDE-IDG.png**
+  - **Difference-IDR-IDE.png**
+  - **Difference-IDR-IDG.png**
+
+These visualizations highlight shifts in token-level attention across creative phases.
+
+---
+
+### 2. `Quantitative_AI_Attention_Analysis.py`
+
+This script:
+
+- Performs non-parametric statistical testing (e.g., Kruskal-Wallis)
+- Conducts post-hoc pairwise comparisons
+- Quantifies attention differences between creative stages
+
+---
+
+# EEG–AI Integration
+
+### EEG-AI-Correlation.png
+
+This figure illustrates the relationship between:
+
+- Human beta-band modulation across creative tasks
+- AI attention shifts across corresponding prompts
+
+It represents a cross-domain comparison between biological neural dynamics and artificial attention mechanisms.
+
+---
+
+# How to Reproduce
+
+## MATLAB
+
+1. Open MATLAB.
+2. Ensure EEG `.mat` data files are in the working directory.
+3. Run:
+   - `EEG_Beta_Analysis.m`
+   - `Frontal_Parietal_Analysis.m`
+
+---
+
+## Python
+
+Install dependencies:
+
+```bash
+pip install transformers torch numpy matplotlib scipy scikit_posthocs
+
+Run:
+
+python Visual_AI_Attention_Analysis.py
+python Quantitative_AI_Attention_Analysis.py
