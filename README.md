@@ -2,8 +2,6 @@
 
 This repository contains the analysis code and results for a study exploring **human creativity and AI attention patterns** during divergent and evaluative creative tasks. The project includes EEG data analysis of brain activity and Python-based AI attention analysis.
 
----
-
 ## Project Overview
 
 The study investigates three phases of creativity:
@@ -14,28 +12,6 @@ The study investigates three phases of creativity:
 We analyzed:
 - **EEG recordings** to measure alpha and beta power across tasks.  
 - **AI attention patterns** using GPT-2 to simulate creative interpretation and critique.
-
----
-
-## Repository Structure
-
-EEG-Creativity-Analysis/
-├─ MATLAB/
-│ └─ eeg_beta_analysis.m # MATLAB script for EEG alpha/beta analysis
-├─ Python/
-│ └─ ai_attention_analysis.py # Python script for AI attention mapping and statistics
-├─ Figures/
-│ ├─ Mean_alpha_power.png
-│ ├─ Mean_beta_power.png
-│ ├─ IDG.png
-│ ├─ IDE.png
-│ ├─ IDR.png
-│ ├─ Difference-IDE-IDG.png
-│ ├─ Difference-IDR-IDE.png
-│ └─ Difference-IDR-IDG.png
-└─ README.md
-
----
 
 ## MATLAB Analysis (EEG)
 
@@ -52,8 +28,6 @@ The `eeg_beta_analysis.m` script performs:
 - **Mean_beta_power.png** – Mean beta power across IDG, IDE, IDR tasks.  
 - **Critical contrasts (optional)** – IDG vs IDR, IDE vs IDR highlighting significant beta differences.  
 
----
-
 ## Python Analysis (AI Attention)
 
 The Python script `ai_attention_analysis.py` performs:
@@ -67,8 +41,6 @@ The Python script `ai_attention_analysis.py` performs:
 - **IDG.png, IDE.png, IDR.png** – Attention maps for each creative phase.  
 - **Difference-IDE-IDG.png, Difference-IDR-IDE.png, Difference-IDR-IDG.png** – Attention difference maps showing task-to-task changes.  
 
----
-
 ## How to Use
 
 1. **EEG Analysis (MATLAB)**
@@ -79,15 +51,11 @@ The Python script `ai_attention_analysis.py` performs:
    - Ensure Python 3.x with `transformers`, `torch`, `numpy`, `matplotlib`, and `scikit_posthocs` installed.  
    - Run `ai_attention_analysis.py` to generate attention maps, difference maps, and statistical summaries.  
 
----
-
 ## Notes
 
 - EEG data used for analysis is not included in this repository to protect participant privacy.  
 - Figures are provided to illustrate results.  
 - The repository is structured to clearly separate MATLAB (EEG) and Python (AI) analyses, along with figures for visualization.
-
----
 
 ## References
 
