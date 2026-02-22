@@ -163,3 +163,4 @@ ylabel('Beta Power (\muV^2)');
 title('Beta Power: Frontal vs Parietal');
 legend('Frontal','Parietal','Location','best');
 grid on;
+
